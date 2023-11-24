@@ -1,6 +1,6 @@
 package Framework;
 
-import Framework.Browser.DriveManager;
+import Framework.Browser.DriverManager;
 import Framework.Browser.TypeBrowser;
 import Framework.Report.Report;
 import Framework.Utils.FilesOperation;
@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
 
-public class TestBase extends DriveManager {
+public class TestBase extends DriverManager {
     private static WebDriver driver;
     private static FilesOperation filesOperation = new FilesOperation();
 

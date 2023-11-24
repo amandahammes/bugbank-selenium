@@ -1,3 +1,3 @@
-mail, name, password, passwordConfirmation
-mail1@mail.com, Maria, 1234, 1234
-mail2@mail.com, Junior, 4321, 4321
+mail,name,password,passwordConfirmation
+mail1@mail.com,Maria,1234,1234
+mail2@mail.com,Junior,4321,4321
