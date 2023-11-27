@@ -27,8 +27,8 @@ public class RegisterPage {
     public WebElement getPasswordValidationTextField() {
         return wait.visibilityOfElement(By.cssSelector(".login__password:nth-child(5) .input__default"));
     }
-    public WebElement getBalanceStatusToggleField() {
-        return wait.visibilityOfElement(By.id("toggleAddBalance"));
+    public WebElement getBalanceStatusToggle() {
+        return driver.findElement(By.id("toggleAddBalance"));
     }
     public WebElement getSubmitButton() {
       return wait.visibilityOfElement(By.cssSelector(".CMabB"));

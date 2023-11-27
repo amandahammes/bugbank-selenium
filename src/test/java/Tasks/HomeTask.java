@@ -19,8 +19,8 @@ public class HomeTask {
         String numberAccount = homePage.getBankAccountNumberField().getText();
         String numeroConta = numberAccount.replaceAll("Conta digital: ", "").trim();
         String[] partes = numeroConta.split("-");
-        accountNumber = partes[0];
-        accountDigit = partes[1];
+        setAccountNumber(partes[0]);
+        setAccountDigit(partes[1]);
     }
     public void conferirSaldoEmConta(){
         String saldoText = homePage.getSaldoTextField().getText();
@@ -47,5 +47,17 @@ public class HomeTask {
 
     public String getBalanceAccount() {
         return balanceAccount;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setAccountDigit(String accountDigit) {
+        this.accountDigit = accountDigit;
+    }
+
+    public void setBalanceAccount(String balanceAccount) {
+        this.balanceAccount = balanceAccount;
     }
 }

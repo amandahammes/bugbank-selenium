@@ -11,64 +11,29 @@ public class RegisterTask {
     private WebDriver driver;
     private RegisterPage registerPage;
     private String modalText;
-    private WebElement saldo;
-    private String accountNumber = "";
-    private String accountDigit = "";
+    private String accountNumber;
+    private String accountDigit;
 
     public RegisterTask(WebDriver driver) {
         this.driver = driver;
         registerPage = new RegisterPage(this.driver);
     }
 
-    public void cadastrarUsuario(String email, String name, String password){
+    public void cadastrarUsuario(String email, String name, String password) throws InterruptedException {
         registerPage.getEmailTextField().sendKeys(email);
         registerPage.getUserNameTextField().sendKeys(name);
         registerPage.getPasswordTextField().sendKeys(password);
         registerPage.getPasswordValidationTextField().sendKeys(password);
-        //setSaldo();
-        //selecionarBotaoSaldo();
-        saldo = registerPage.getBalanceStatusToggleField();
-        //saldo.click();
-        boolean currentState = saldo.isSelected();
-        if (!currentState)
-            saldo.click();
-
+        Thread.sleep(3000);
+        registerPage.getBalanceStatusToggle().click();
         registerPage.getSubmitButton().click();
-        modalText = registerPage.getModalText().getText();
-        pegarContaDigitoDoModal();
         registerPage.getCloseButtonModal().click();
     }
 
-    public void selecionarBotaoSaldo(){
-        WebElement saldo = registerPage.getBalanceStatusToggleField();
-        boolean currentState = saldo.isSelected();
-        if (!currentState)
-            saldo.click();
-    }
-
-
-    public void pegarContaDigitoDoModal(){
-        Pattern padrao = Pattern.compile("\\d+-\\d+");
-        Matcher matcher = padrao.matcher(modalText);
-        String conta = String.valueOf(matcher);
-        String[] partes = conta.split("-");
-        accountNumber = partes[0];
-        accountDigit = partes[1];
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public String getAccountDigit() {
-        return accountDigit;
-    }
-
-    public void setSaldo() {
-        this.saldo = registerPage.getBalanceStatusToggleField();
-        //this.saldo.click();
-        boolean currentState = saldo.isSelected();
-        if (!currentState)
-            saldo.click();
+    public void limparCadastroUsuario(){
+        registerPage.getEmailTextField().clear();
+        registerPage.getUserNameTextField().clear();
+        registerPage.getPasswordTextField().clear();
+        registerPage.getPasswordValidationTextField().clear();
     }
 }

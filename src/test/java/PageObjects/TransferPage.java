@@ -4,6 +4,7 @@ import Framework.Browser.Waits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class TransferPage {
     private WebDriver driver;
@@ -14,7 +15,7 @@ public class TransferPage {
      wait = new Waits(this.driver);
     }
     public WebElement getNumberAccountTextField() {
-        return wait.visibilityOfElement(By.xpath("//div[@class='card__register']//input[1]"));
+        return wait.waitForElementPresence(By.xpath("//input[@name='accountNumber']"));
     }
     public WebElement getDigitAccountTextField() {
         return wait.visibilityOfElement(By.xpath("//input[@name='digit']"));
@@ -26,7 +27,7 @@ public class TransferPage {
         return wait.visibilityOfElement(By.xpath("//input[@name='description']"));
     }
     public WebElement getTransferSubmitButton(){
-        return wait.visibilityOfElement(By.className("CMabB"));
+        return wait.visibilityOfElement(By.cssSelector(".CMabB"));
     }
     public WebElement getModalTextConfirmation(){
         return wait.visibilityOfElement(By.id("modalText"));

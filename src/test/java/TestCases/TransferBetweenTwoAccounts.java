@@ -32,13 +32,14 @@ public class TransferBetweenTwoAccounts extends TestBase {
         try{
             loginTask.irPaginaCadastro();
             registerTask.cadastrarUsuario(email1,name1,password1);
-            String numeroConta1 = registerTask.getAccountNumber();
-            String digitoConta1 = registerTask.getAccountDigit();
+            loginTask.efetuarLogin(email1,password1);
+            homeTask.conferirNumeroConta();
+            homeTask.sairHome();
             loginTask.irPaginaCadastro();
-            registerTask.cadastrarUsuario(name2,email2,password2);
+            registerTask.cadastrarUsuario(email2,name2,password2);
             loginTask.efetuarLogin(email2,password2);
             homeTask.irPaginaTransferencia();
-            transferTask.realizarTransferencia(numeroConta1, digitoConta1);
+            transferTask.realizarTransferencia(homeTask.getAccountNumber(), homeTask.getAccountDigit());
             transferTask.voltarHome();
             homeTask.sairHome();
 
