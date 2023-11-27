@@ -33,7 +33,7 @@ public class RegisterPage {
     public WebElement getSubmitButton() {
       return wait.visibilityOfElement(By.cssSelector(".CMabB"));
     };
-    public WebElement getModalTextField() {
+    public WebElement getModalText() {
         return wait.visibilityOfElement(By.id("modalText"));
     }
     public WebElement getCloseButtonModal() {

@@ -34,4 +34,7 @@ public class TransferPage {
     public WebElement getCloseModalButton(){
         return wait.visibilityOfElement(By.id("btnCloseModal"));
     }
+    public WebElement getBackButton(){
+        return wait.visibilityOfElement(By.id("btnBack"));
+    }
 }

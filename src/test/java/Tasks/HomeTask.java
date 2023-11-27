@@ -8,6 +8,7 @@ public class HomeTask {
     private HomePage homePage;
     private String accountNumber;
     private String accountDigit;
+    private String balanceAccount;
 
     public HomeTask (WebDriver driver){
         this.driver = driver;
@@ -20,6 +21,11 @@ public class HomeTask {
         String[] partes = numeroConta.split("-");
         accountNumber = partes[0];
         accountDigit = partes[1];
+    }
+    public void conferirSaldoEmConta(){
+        String saldoText = homePage.getSaldoTextField().getText();
+        balanceAccount = saldoText.replaceAll("Saldo em conta R$ ", "").trim();
+
     }
     public void irPaginaTransferencia(){
         homePage.getTransferButton().click();
@@ -37,5 +43,9 @@ public class HomeTask {
 
     public String getAccountDigit() {
         return accountDigit;
+    }
+
+    public String getBalanceAccount() {
+        return balanceAccount;
     }
 }
