@@ -39,5 +39,8 @@ public class RegisterPage {
     public WebElement getCloseButtonModal() {
         return wait.visibilityOfElement(By.id("btnCloseModal"));
     }
+    public WebElement getConfirmationPasswordText(){
+        return wait.visibilityOfElement(By.xpath("//label[text()='Confirmação senha']"));
+    }
 
 }

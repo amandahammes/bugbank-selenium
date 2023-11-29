@@ -25,6 +25,7 @@ public class TransferTask {
         transferPage.getTransferDescriptionTextField().sendKeys("Compra livros");
         transferPage.getTransferSubmitButton().click();
         modalText = transferPage.getModalTextConfirmation().getText();
+
         transferPage.getCloseModalButton().click();
     }
 

@@ -1,18 +1,21 @@
 package Tasks;
 
 import PageObjects.HomePage;
+import Validations.HomeValidation;
+import Validations.TransferValidation;
 import org.openqa.selenium.WebDriver;
 
 public class HomeTask {
     private WebDriver driver;
     private HomePage homePage;
+    private TransferValidation transferValidation;
     private String accountNumber;
     private String accountDigit;
-    private String balanceAccount;
 
-    public HomeTask (WebDriver driver){
+    public HomeTask(WebDriver driver) {
         this.driver = driver;
         homePage = new HomePage(this.driver);
+        transferValidation = new TransferValidation(this.driver);
     }
 
     public void conferirNumeroConta() {
@@ -22,18 +25,17 @@ public class HomeTask {
         setAccountNumber(partes[0]);
         setAccountDigit(partes[1]);
     }
-    public void conferirSaldoEmConta(){
-        String saldoText = homePage.getSaldoTextField().getText();
-        balanceAccount = saldoText.replaceAll("Saldo em conta R$ ", "").trim();
 
-    }
-    public void irPaginaTransferencia(){
+    public void irPaginaTransferencia() {
         homePage.getTransferButton().click();
+        transferValidation.validationTransferPage();
     }
-    public void irPaginaExtrato(){
+
+    public void irPaginaExtrato() {
         homePage.getExtractButton().click();
     }
-    public void sairHome(){
+
+    public void sairHome() {
         homePage.getSignOutButton().click();
     }
 
@@ -45,19 +47,11 @@ public class HomeTask {
         return accountDigit;
     }
 
-    public String getBalanceAccount() {
-        return balanceAccount;
-    }
-
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
     public void setAccountDigit(String accountDigit) {
         this.accountDigit = accountDigit;
-    }
-
-    public void setBalanceAccount(String balanceAccount) {
-        this.balanceAccount = balanceAccount;
     }
 }

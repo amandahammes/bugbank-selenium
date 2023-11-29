@@ -29,5 +29,8 @@ public class HomePage {
     public WebElement getExtractButton(){
         return wait.visibilityOfElement(By.id("btn-EXTRATO"));
     }
+    public WebElement getWelcomeText(){
+        return wait.visibilityOfElement(By.cssSelector("p.jjmPHj:nth-of-type(2)"));
+    }
 
 }

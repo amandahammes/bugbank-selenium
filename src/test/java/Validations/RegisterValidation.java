@@ -21,9 +21,20 @@ public class RegisterValidation {
 
     public void validationRegisterPage(){
         try{
-            waits.loadElement(registerPage.getUserNameTextField());
-            Assertions.assertTrue(registerPage.getBalanceStatusToggle().isDisplayed());
-            Report.log(Status.PASS, "Acessou a página de registro com sucesso", Screenshot.capture(driver));
+            waits.loadElement(registerPage.getConfirmationPasswordText());
+            Assertions.assertTrue(registerPage.getConfirmationPasswordText().isDisplayed());
+            Report.log(Status.PASS, "Acessou a página de cadastro com sucesso", Screenshot.capture(driver));
+        }catch (Exception e){
+            Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
+        }
+    }
+
+    public void validationRegisterNewAccount(){
+        try {
+            waits.loadElement(registerPage.getModalText());
+            String modalText = registerPage.getModalText().getText();
+            Assertions.assertTrue(modalText.contains("foi criada com sucesso"));
+            Report.log(Status.PASS, "Realizou cadastro de conta com sucesso", Screenshot.capture(driver));
         }catch (Exception e){
             Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
         }

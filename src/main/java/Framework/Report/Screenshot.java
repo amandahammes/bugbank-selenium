@@ -30,21 +30,21 @@ public class Screenshot {
         } catch (Exception e) {
             String message = "Ocorreu um erro ao capturar a tela";
         }
-
         return null;
     }
 
-//    public static Media captureBase64(WebDriver driver){
-//        try {
-//            PageSnapshot screenshot = Shutterbug.shootPage(driver);
-//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//            ImageIO.write(screenshot.getImage(), "png", stream);
-//            String base64image = Base64.getEncoder().encodeToString(stream.toByteArray());
-//            encodeBase64String(stream.toByteArray());
-//            return MediaEntityBuilder.createScreenCaptureFromBase64String(base64image).build();
-//
-//        } catch (Exception e) {
-//            String message = "Ocorreu um erro ao capturar a tela";
-//        }
-//    }
+    public static Media captureBase64(WebDriver driver){
+        try {
+            PageSnapshot screenshot = Shutterbug.shootPage(driver);
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            ImageIO.write(screenshot.getImage(), "png", stream);
+            String base64image = Base64.getEncoder().encodeToString(stream.toByteArray());
+
+            return MediaEntityBuilder.createScreenCaptureFromBase64String(base64image).build();
+
+        } catch (Exception e) {
+            String message = "Ocorreu um erro ao capturar a tela";
+        }
+        return null;
+    }
 }

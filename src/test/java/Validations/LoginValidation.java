@@ -6,6 +6,7 @@ import PageObjects.LoginPage;
 import com.aventstack.extentreports.Status;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginValidation {
     private WebDriver driver;
@@ -18,12 +19,14 @@ public class LoginValidation {
         waits = new Waits(this.driver);
     }
 
-    public  void validationLoginPage(){
-        try{
+    public void validationLoginPage() {
+        try {
             waits.loadElement(loginPage.getUserNameTextField());
-            Assertions.assertTrue(loginPage.getUserNameTextField().isDisplayed());
+            WebElement userNameField = loginPage.getUserNameTextField();
+            String placeholderText = userNameField.getAttribute("placeholder");
+            Assertions.assertEquals("Informe seu e-mail", placeholderText);
             Report.log(Status.PASS, "Acessou a página de login com sucesso", Screenshot.capture(driver));
-        }catch (Exception e){
+        } catch (Exception e) {
             Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
         }
     }

@@ -4,15 +4,15 @@ import com.github.javafaker.Faker;
 
 import java.util.Random;
 
-public class DataGenerator {
+public class FakersGenerator {
     private Faker faker;
 
-    public DataGenerator() {
+    public FakersGenerator() {
         this.faker = new Faker();
     }
 
     public String generateName() {
-        return faker.name().fullName();
+        return faker.name().firstName();
     }
 
     public String generateEmail() {
