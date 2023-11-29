@@ -2,6 +2,7 @@ package Tasks;
 
 import PageObjects.HomePage;
 import Validations.HomeValidation;
+import Validations.LoginValidation;
 import Validations.TransferValidation;
 import org.openqa.selenium.WebDriver;
 
@@ -9,6 +10,7 @@ public class HomeTask {
     private WebDriver driver;
     private HomePage homePage;
     private TransferValidation transferValidation;
+    private LoginValidation loginValidation;
     private String accountNumber;
     private String accountDigit;
 
@@ -16,6 +18,7 @@ public class HomeTask {
         this.driver = driver;
         homePage = new HomePage(this.driver);
         transferValidation = new TransferValidation(this.driver);
+        loginValidation = new LoginValidation(this.driver);
     }
 
     public void conferirNumeroConta() {
@@ -37,6 +40,7 @@ public class HomeTask {
 
     public void sairHome() {
         homePage.getSignOutButton().click();
+        loginValidation.validationLoginPage();
     }
 
     public String getAccountNumber() {

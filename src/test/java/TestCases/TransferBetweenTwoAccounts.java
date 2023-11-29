@@ -1,6 +1,7 @@
 package TestCases;
 
 import Framework.Report.Report;
+import Framework.Report.ReportType;
 import Framework.Report.Screenshot;
 import Framework.TestBase;
 import Framework.Utils.FakersGenerator;
@@ -31,6 +32,7 @@ public class TransferBetweenTwoAccounts extends TestBase {
     @Test
     public void realizarTransferenciaEntreDuasContas(){
         try{
+            Report.createTest("Realizar transferência entre duas contas com sucesso", ReportType.SINGLE);
             loginTask.irPaginaCadastro();
             registerTask.cadastrarUsuario(email1,name1,password1);
             loginTask.efetuarLogin(email1,password1);

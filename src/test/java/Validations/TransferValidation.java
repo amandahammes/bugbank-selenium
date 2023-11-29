@@ -26,7 +26,7 @@ public class TransferValidation {
             waits.loadElement(transferPage.getTransferSubmitButton());
             WebElement transferSubmitButton = transferPage.getTransferSubmitButton();
             Assertions.assertNotNull(transferSubmitButton, "O botão de submissão não foi encontrado");
-            Report.log(Status.PASS, "O botão de submissão foi encontrado na página de transferência", Screenshot.capture(driver));
+            Report.log(Status.PASS, "Acessou a página de Transferência com sucesso.", Screenshot.capture(driver));
         } catch (Exception e) {
             Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
         }

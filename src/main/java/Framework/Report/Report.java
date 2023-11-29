@@ -21,9 +21,9 @@ public class Report {
         parentTest.set(extentTest);
     }
 
-    public static void createStep(String stepName){
+    public static void createStep(String stepname){
         try{
-            ExtentTest child = parentTest.get().createNode(stepName);
+            ExtentTest child = parentTest.get().createNode(stepname);
             test.set(child);
         } catch (NullPointerException ignored){}
     }
