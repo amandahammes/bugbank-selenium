@@ -21,20 +21,26 @@ public class RegisterPage {
     public WebElement getUserNameTextField() {
         return wait.visibilityOfElement(By.xpath("//input[@placeholder='Informe seu Nome']"));
     }
-
     public WebElement getPasswordTextField() {
         return wait.visibilityOfElement(By.cssSelector(".login__password:nth-child(4) .input__default"));
     }
-
     public WebElement getPasswordValidationTextField() {
         return wait.visibilityOfElement(By.cssSelector(".login__password:nth-child(5) .input__default"));
     }
-
-    public WebElement getBalanceStatusToggleField() {
-        return wait.visibilityOfElement(By.id("toggleAddBalance"));
+    public WebElement getBalanceStatusToggle() {
+        return driver.findElement(By.id("toggleAddBalance"));
     }
-
     public WebElement getSubmitButton() {
       return wait.visibilityOfElement(By.cssSelector(".CMabB"));
     };
+    public WebElement getModalText() {
+        return wait.visibilityOfElement(By.id("modalText"));
+    }
+    public WebElement getCloseButtonModal() {
+        return wait.visibilityOfElement(By.id("btnCloseModal"));
+    }
+    public WebElement getConfirmationPasswordText(){
+        return wait.visibilityOfElement(By.xpath("//label[text()='Confirmação senha']"));
+    }
+
 }

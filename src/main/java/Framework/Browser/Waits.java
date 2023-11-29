@@ -29,4 +29,8 @@ public class Waits {
             return element;
         }
     }
+
+    public WebElement waitForElementPresence(By locator) {
+        return new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
 }

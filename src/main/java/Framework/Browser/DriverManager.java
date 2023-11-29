@@ -13,7 +13,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.CapabilityType;
 
-public class DriveManager {
+public class DriverManager {
     private static WebDriver driver;
 
     private static WebDriver getManagerDriver (TypeBrowser type){
