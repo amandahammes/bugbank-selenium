@@ -1,6 +1,6 @@
 # Automação Bugbank end-to-end com Selenium WebDriver
 
-<p align="center"> <img src="https://bugbank.netlify.app/_ipx/w_640,q_75/%2F_next%2Fstatic%2Fmedia%2Fbugbank.ede6fc83.png?url=%2F_next%2Fstatic%2Fmedia%2Fbugbank.ede6fc83.png&w=640&q=75" min-width="100px" max-width="140px" width="180px"> </p>
+<p align="center"> <img src="https://bugbank.netlify.app/_ipx/w_640,q_75/%2F_next%2Fstatic%2Fmedia%2Fbugbank.ede6fc83.png?url=%2F_next%2Fstatic%2Fmedia%2Fbugbank.ede6fc83.png&w=640&q=75"> </p>
 
 
 ## Projeto 
