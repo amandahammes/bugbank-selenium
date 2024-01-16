@@ -5,7 +5,7 @@
 
 ## Projeto 
 
-Link ambiente de teste BugBank: [([BugBank](https://bugbank.netlify.app/))](https://bugbank.netlify.app/)
+Link ambiente de teste BugBank: [https://bugbank.netlify.app/](https://bugbank.netlify.app/)
 
 ## Clonar o Projeto
 - Para realizar o clone do projeto, clique em clone, escolha a forma que deseja fazer a clonagem (se por SSH ou HTTPS),
