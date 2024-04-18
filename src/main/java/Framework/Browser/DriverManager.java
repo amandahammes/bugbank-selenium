@@ -1,6 +1,5 @@
 package Framework.Browser;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;

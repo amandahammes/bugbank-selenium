@@ -31,7 +31,7 @@ public class RegisterPage {
         return driver.findElement(By.id("toggleAddBalance"));
     }
     public WebElement getSubmitButton() {
-      return wait.visibilityOfElement(By.cssSelector(".CMabB"));
+      return wait.visibilityOfElement(By.xpath("//button[contains(text(), 'Cadastrar')]"));
     };
     public WebElement getModalText() {
         return wait.visibilityOfElement(By.id("modalText"));

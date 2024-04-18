@@ -4,6 +4,7 @@ import PageObjects.RegisterPage;
 import Validations.RegisterValidation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,7 +27,8 @@ public class RegisterTask {
         registerPage.getPasswordValidationTextField().sendKeys(password);
         Thread.sleep(3000);
         registerPage.getBalanceStatusToggle().click();
-        registerPage.getSubmitButton().click();
+        Actions actions = new Actions(driver);
+        actions.moveToElement(registerPage.getSubmitButton()).click().perform();
         registerValidation.validationRegisterNewAccount();
         registerPage.getCloseButtonModal().click();
     }

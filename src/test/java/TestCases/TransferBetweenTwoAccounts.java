@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 public class TransferBetweenTwoAccounts extends TestBase {
-    private WebDriver driver = this.getDriver();
+    private WebDriver driver = getDriver();
     private RegisterTask registerTask = new RegisterTask(driver);
     private LoginTask loginTask = new LoginTask(driver);
     private HomeTask homeTask = new HomeTask(driver);
@@ -52,6 +52,7 @@ public class TransferBetweenTwoAccounts extends TestBase {
 
         }catch (Exception e){
             Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
+            throw new RuntimeException("ERRO");
         }
    }
 }

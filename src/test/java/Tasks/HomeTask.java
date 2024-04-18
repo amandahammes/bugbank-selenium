@@ -27,6 +27,8 @@ public class HomeTask {
         String[] partes = numeroConta.split("-");
         setAccountNumber(partes[0]);
         setAccountDigit(partes[1]);
+        System.out.printf("Numero conta: " + getAccountNumber());
+        System.out.printf("Dígito conta: " + getAccountDigit());
     }
 
     public void irPaginaTransferencia() {
